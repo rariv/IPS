@@ -1,22 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a6d8d001-644d-4c71-a77d-e146e9fd4be5" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPS" Name="DRMRRBRRMProyectoIPS" DisplayName="DRMRRBRRMProyectoIPS" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" ProductName="DRMRRBRRMProyectoIPS" CompanyName="UPM_IPS" PackageGuid="2608c69d-9eaf-4ee3-97ac-78a988eba9ac" PackageNamespace="UPM_IPS.DRMRRBRRMProyectoIPS" xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/DslDefinitionModel">
   <Classes>
-    <DomainClass Id="fe52bbd0-d167-4312-b30d-bd2dfbd6b04d" Description="The root in which all other elements are embedded. Appears as a diagram." Name="ExampleModel" DisplayName="Example Model" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
+    <DomainClass Id="fe52bbd0-d167-4312-b30d-bd2dfbd6b04d" Description="The root in which all other elements are embedded. Appears as a diagram." Name="FONDO" DisplayName="FONDO" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
       <ElementMergeDirectives>
         <ElementMergeDirective>
-          <Notes>Creates an embedding link when an element is dropped onto a model. </Notes>
           <Index>
-            <DomainClassMoniker Name="ExampleElement" />
+            <DomainClassMoniker Name="Clase" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>ExampleModelHasElements.Elements</DomainPath>
+            <DomainPath>FONDOHasClase.Clase</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="2b10d1a7-bc47-46fa-92d7-64ddf47d742c" Description="Elements embedded in the model. Appear as boxes on the diagram." Name="ExampleElement" DisplayName="Example Element" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
+    <DomainClass Id="a30412f2-3200-47e3-91af-e9a94563e216" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Clase" Name="Clase" DisplayName="Clase" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
       <Properties>
-        <DomainProperty Id="60c2cd73-bbec-4e41-af31-be01d22238b8" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.ExampleElement.Name" Name="Name" DisplayName="Name" DefaultValue="" IsElementName="true">
+        <DomainProperty Id="d84a5b95-b98c-4f18-b7a9-0ca6c4bf90be" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Clase.Nombre" Name="Nombre" DisplayName="Nombre" IsElementName="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Atributo" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ClaseHasAtributo.Atributo</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="ee72e77c-2c28-41e1-878a-4a3cba36100f" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo" Name="Atributo" DisplayName="Atributo" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
+      <Properties>
+        <DomainProperty Id="ec53eb22-c32b-4707-99d2-8dc752744e72" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.Nombre Atributo" Name="NombreAtributo" DisplayName="Nombre Atributo">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -25,34 +43,34 @@
     </DomainClass>
   </Classes>
   <Relationships>
-    <DomainRelationship Id="abebbe90-8559-4ee9-9891-2704e0cae398" Description="Embedding relationship between the Model and Elements" Name="ExampleModelHasElements" DisplayName="Example Model Has Elements" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" IsEmbedding="true">
+    <DomainRelationship Id="3590e321-9ce0-4161-bca1-80950921583b" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.FONDOHasClase" Name="FONDOHasClase" DisplayName="FONDOHas Clase" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" IsEmbedding="true">
       <Source>
-        <DomainRole Id="2c83d2fe-043d-452c-a99f-b0345cc90efc" Description="" Name="ExampleModel" DisplayName="Example Model" PropertyName="Elements" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Elements">
+        <DomainRole Id="19b70366-a755-4ad0-ba28-6d2844974bfe" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.FONDOHasClase.FONDO" Name="FONDO" DisplayName="FONDO" PropertyName="Clase" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Clase">
           <RolePlayer>
-            <DomainClassMoniker Name="ExampleModel" />
+            <DomainClassMoniker Name="FONDO" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="295f8991-b6b8-44ba-a057-5fecd9f35c85" Description="" Name="Element" DisplayName="Element" PropertyName="ExampleModel" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Example Model">
+        <DomainRole Id="7cfbe718-6383-4b2c-8523-9ac0be9a7c22" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.FONDOHasClase.Clase" Name="Clase" DisplayName="Clase" PropertyName="FONDO" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="FONDO">
           <RolePlayer>
-            <DomainClassMoniker Name="ExampleElement" />
+            <DomainClassMoniker Name="Clase" />
           </RolePlayer>
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="4741fb60-dce9-4a49-bb1d-b91f9d93d614" Description="Reference relationship between Elements." Name="ExampleElementReferencesTargets" DisplayName="Example Element References Targets" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
+    <DomainRelationship Id="4c18e2d7-b9ff-462b-8843-03922b6a7e8d" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo" Name="ClaseHasAtributo" DisplayName="Clase Has Atributo" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" IsEmbedding="true">
       <Source>
-        <DomainRole Id="45db3a5f-1dbd-456a-ba7b-1cb8d7b18dc7" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.ExampleRelationship.Target" Name="Source" DisplayName="Source" PropertyName="Targets" PropertyDisplayName="Targets">
+        <DomainRole Id="0842f72e-89de-48b5-8300-882d92531a42" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo.Clase" Name="Clase" DisplayName="Clase" PropertyName="Atributo" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Atributo">
           <RolePlayer>
-            <DomainClassMoniker Name="ExampleElement" />
+            <DomainClassMoniker Name="Clase" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="300acf13-c179-4fd3-bfe4-a28bfb304b26" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.ExampleRelationship.Source" Name="Target" DisplayName="Target" PropertyName="Sources" PropertyDisplayName="Sources">
+        <DomainRole Id="15c2d37f-3376-4dc2-9e5a-cdb731a2bea4" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo.Atributo" Name="Atributo" DisplayName="Atributo" PropertyName="Clase" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Clase">
           <RolePlayer>
-            <DomainClassMoniker Name="ExampleElement" />
+            <DomainClassMoniker Name="Atributo" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -76,119 +94,101 @@
     <ExternalType Name="Char" Namespace="System" />
   </Types>
   <Shapes>
-    <GeometryShape Id="90b1a56c-ab54-479f-a14e-af49d4b2b3d5" Description="Shape used to represent ExampleElements on a Diagram." Name="ExampleShape" DisplayName="Example Shape" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" FixedTooltipText="Example Shape" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
-      <Notes>The shape has a text decorator used to display the Name property of the mapped ExampleElement.</Notes>
-      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
+    <CompartmentShape Id="03b98533-9b60-4c3e-ae84-b0c8a71aa644" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentShape1" Name="CompartmentShape1" DisplayName="Compartment Shape1" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" FixedTooltipText="Compartment Shape1" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="NombreDisplay" DisplayName="Nombre Display" DefaultText="NombreDisplay" FontStyle="Bold, Underline" FontSize="10" />
       </ShapeHasDecorators>
-    </GeometryShape>
+      <Compartment Name="Atributos" Title="Atributos" />
+    </CompartmentShape>
   </Shapes>
-  <Connectors>
-    <Connector Id="0dc625ac-cb95-4d8c-9521-de27bcaad648" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01" />
-  </Connectors>
   <XmlSerializationBehavior Name="DRMRRBRRMProyectoIPSSerializationBehavior" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
     <ClassData>
-      <XmlClassData TypeName="ExampleModel" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleModelMoniker" ElementName="exampleModel" MonikerTypeName="ExampleModelMoniker">
-        <DomainClassMoniker Name="ExampleModel" />
+      <XmlClassData TypeName="FONDO" MonikerAttributeName="" SerializeId="true" MonikerElementName="fONDOMoniker" ElementName="fONDO" MonikerTypeName="FONDOMoniker">
+        <DomainClassMoniker Name="FONDO" />
         <ElementData>
-          <XmlRelationshipData RoleElementName="elements">
-            <DomainRelationshipMoniker Name="ExampleModelHasElements" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="clase">
+            <DomainRelationshipMoniker Name="FONDOHasClase" />
           </XmlRelationshipData>
         </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="ExampleElement" MonikerAttributeName="name" SerializeId="true" MonikerElementName="exampleElementMoniker" ElementName="exampleElement" MonikerTypeName="ExampleElementMoniker">
-        <DomainClassMoniker Name="ExampleElement" />
-        <ElementData>
-          <XmlPropertyData XmlName="name" IsMonikerKey="true">
-            <DomainPropertyMoniker Name="ExampleElement/Name" />
-          </XmlPropertyData>
-          <XmlRelationshipData RoleElementName="targets">
-            <DomainRelationshipMoniker Name="ExampleElementReferencesTargets" />
-          </XmlRelationshipData>
-        </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="ExampleModelHasElements" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleModelHasElementsMoniker" ElementName="exampleModelHasElements" MonikerTypeName="ExampleModelHasElementsMoniker">
-        <DomainRelationshipMoniker Name="ExampleModelHasElements" />
-      </XmlClassData>
-      <XmlClassData TypeName="ExampleElementReferencesTargets" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleElementReferencesTargetsMoniker" ElementName="exampleElementReferencesTargets" MonikerTypeName="ExampleElementReferencesTargetsMoniker">
-        <DomainRelationshipMoniker Name="ExampleElementReferencesTargets" />
-      </XmlClassData>
-      <XmlClassData TypeName="ExampleShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleShapeMoniker" ElementName="exampleShape" MonikerTypeName="ExampleShapeMoniker">
-        <GeometryShapeMoniker Name="ExampleShape" />
-      </XmlClassData>
-      <XmlClassData TypeName="ExampleConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleConnectorMoniker" ElementName="exampleConnector" MonikerTypeName="ExampleConnectorMoniker">
-        <ConnectorMoniker Name="ExampleConnector" />
       </XmlClassData>
       <XmlClassData TypeName="DRMRRBRRMProyectoIPSDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="dRMRRBRRMProyectoIPSDiagramMoniker" ElementName="dRMRRBRRMProyectoIPSDiagram" MonikerTypeName="DRMRRBRRMProyectoIPSDiagramMoniker">
         <DiagramMoniker Name="DRMRRBRRMProyectoIPSDiagram" />
       </XmlClassData>
+      <XmlClassData TypeName="FONDOHasClase" MonikerAttributeName="" SerializeId="true" MonikerElementName="fONDOHasClaseMoniker" ElementName="fONDOHasClase" MonikerTypeName="FONDOHasClaseMoniker">
+        <DomainRelationshipMoniker Name="FONDOHasClase" />
+      </XmlClassData>
+      <XmlClassData TypeName="Clase" MonikerAttributeName="" SerializeId="true" MonikerElementName="claseMoniker" ElementName="clase" MonikerTypeName="ClaseMoniker">
+        <DomainClassMoniker Name="Clase" />
+        <ElementData>
+          <XmlPropertyData XmlName="nombre">
+            <DomainPropertyMoniker Name="Clase/Nombre" />
+          </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="atributo">
+            <DomainRelationshipMoniker Name="ClaseHasAtributo" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="CompartmentShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="compartmentShape1Moniker" ElementName="compartmentShape1" MonikerTypeName="CompartmentShape1Moniker">
+        <CompartmentShapeMoniker Name="CompartmentShape1" />
+      </XmlClassData>
+      <XmlClassData TypeName="ClaseHasAtributo" MonikerAttributeName="" SerializeId="true" MonikerElementName="claseHasAtributoMoniker" ElementName="claseHasAtributo" MonikerTypeName="ClaseHasAtributoMoniker">
+        <DomainRelationshipMoniker Name="ClaseHasAtributo" />
+      </XmlClassData>
+      <XmlClassData TypeName="Atributo" MonikerAttributeName="" SerializeId="true" MonikerElementName="atributoMoniker" ElementName="atributo" MonikerTypeName="AtributoMoniker">
+        <DomainClassMoniker Name="Atributo" />
+        <ElementData>
+          <XmlPropertyData XmlName="nombreAtributo">
+            <DomainPropertyMoniker Name="Atributo/NombreAtributo" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="DRMRRBRRMProyectoIPSExplorer" />
-  <ConnectionBuilders>
-    <ConnectionBuilder Name="ExampleElementReferencesTargetsBuilder">
-      <Notes>Provides for the creation of an ExampleRelationship by pointing at two ExampleElements.</Notes>
-      <LinkConnectDirective>
-        <DomainRelationshipMoniker Name="ExampleElementReferencesTargets" />
-        <SourceDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="ExampleElement" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </SourceDirectives>
-        <TargetDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="ExampleElement" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </TargetDirectives>
-      </LinkConnectDirective>
-    </ConnectionBuilder>
-  </ConnectionBuilders>
-  <Diagram Id="ad25e03f-4d22-4eb5-a74e-779ebb4a4d5e" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDiagram" Name="DRMRRBRRMProyectoIPSDiagram" DisplayName="Minimal Language Diagram" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
+  <Diagram Id="ad25e03f-4d22-4eb5-a74e-779ebb4a4d5e" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDiagram" Name="DRMRRBRRMProyectoIPSDiagram" DisplayName="Minimal Language Diagram" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" FillColor="DimGray">
     <Class>
-      <DomainClassMoniker Name="ExampleModel" />
+      <DomainClassMoniker Name="FONDO" />
     </Class>
     <ShapeMaps>
-      <ShapeMap>
-        <DomainClassMoniker Name="ExampleElement" />
+      <CompartmentShapeMap>
+        <DomainClassMoniker Name="Clase" />
         <ParentElementPath>
-          <DomainPath>ExampleModelHasElements.ExampleModel/!ExampleModel</DomainPath>
+          <DomainPath>FONDOHasClase.FONDO/!FONDO</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="ExampleShape/NameDecorator" />
+          <TextDecoratorMoniker Name="CompartmentShape1/NombreDisplay" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="ExampleElement/Name" />
+              <DomainPropertyMoniker Name="Clase/Nombre" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="ExampleShape" />
-      </ShapeMap>
+        <CompartmentShapeMoniker Name="CompartmentShape1" />
+        <CompartmentMap>
+          <CompartmentMoniker Name="CompartmentShape1/Atributos" />
+          <ElementsDisplayed>
+            <DomainPath>ClaseHasAtributo.Atributo/!Atributo</DomainPath>
+          </ElementsDisplayed>
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Atributo/NombreAtributo" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </CompartmentMap>
+      </CompartmentShapeMap>
     </ShapeMaps>
-    <ConnectorMaps>
-      <ConnectorMap>
-        <ConnectorMoniker Name="ExampleConnector" />
-        <DomainRelationshipMoniker Name="ExampleElementReferencesTargets" />
-      </ConnectorMap>
-    </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="DRMRRBRRM_DSLProyIPS" EditorGuid="7e075449-42e6-4b75-89d1-a864671a3556">
     <RootClass>
-      <DomainClassMoniker Name="ExampleModel" />
+      <DomainClassMoniker Name="FONDO" />
     </RootClass>
     <XmlSerializationDefinition CustomPostLoad="false">
       <XmlSerializationBehaviorMoniker Name="DRMRRBRRMProyectoIPSSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="DRMRRBRRMProyectoIPS">
-      <ElementTool Name="ExampleElement" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="ExampleElement" Tooltip="Create an ExampleElement" HelpKeyword="CreateExampleClassF1Keyword">
-        <DomainClassMoniker Name="ExampleElement" />
+      <ElementTool Name="Clase" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Clase" Tooltip="Clase" HelpKeyword="Clase">
+        <DomainClassMoniker Name="Clase" />
       </ElementTool>
-      <ConnectionTool Name="ExampleRelationship" ToolboxIcon="resources\exampleconnectortoolbitmap.bmp" Caption="ExampleRelationship" Tooltip="Drag between ExampleElements to create an ExampleRelationship" HelpKeyword="ConnectExampleRelationF1Keyword">
-        <ConnectionBuilderMoniker Name="DRMRRBRRMProyectoIPS/ExampleElementReferencesTargetsBuilder" />
-      </ConnectionTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="DRMRRBRRMProyectoIPSDiagram" />
