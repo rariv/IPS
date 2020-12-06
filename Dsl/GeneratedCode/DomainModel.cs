@@ -83,6 +83,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				typeof(DRMRRBRRMProyectoIPSDiagram),
 				typeof(ConectorBaseDisplay),
 				typeof(ConectorHerenciaDisplay),
+				typeof(ConectorAgregacionDIisplay),
 				typeof(ClaseDisplay),
 				typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.FixUpDiagram),
 				typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DecoratorPropertyChanged),
@@ -163,7 +164,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(9);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(10);
 				createElementMap.Add(typeof(FONDO), 0);
 				createElementMap.Add(typeof(Clase), 1);
 				createElementMap.Add(typeof(Atributo), 2);
@@ -172,7 +173,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				createElementMap.Add(typeof(DRMRRBRRMProyectoIPSDiagram), 5);
 				createElementMap.Add(typeof(ConectorBaseDisplay), 6);
 				createElementMap.Add(typeof(ConectorHerenciaDisplay), 7);
-				createElementMap.Add(typeof(ClaseDisplay), 8);
+				createElementMap.Add(typeof(ConectorAgregacionDIisplay), 8);
+				createElementMap.Add(typeof(ClaseDisplay), 9);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -194,7 +196,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				case 5: return new DRMRRBRRMProyectoIPSDiagram(partition, propertyAssignments);
 				case 6: return new ConectorBaseDisplay(partition, propertyAssignments);
 				case 7: return new ConectorHerenciaDisplay(partition, propertyAssignments);
-				case 8: return new ClaseDisplay(partition, propertyAssignments);
+				case 8: return new ConectorAgregacionDIisplay(partition, propertyAssignments);
+				case 9: return new ClaseDisplay(partition, propertyAssignments);
 				default: return null;
 			}
 		}

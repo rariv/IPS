@@ -289,6 +289,16 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
 		protected override DslDiagrams::ShapeElement CreateChildShape(DslModeling::ModelElement element)
 		{
+			if(element is global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia)
+			{
+				global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay newShape = new global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay(this.Partition);
+				return newShape;
+			}
+			if(element is global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacion)
+			{
+				global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay newShape = new global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay(this.Partition);
+				return newShape;
+			}
 			if(element is global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase)
 			{
 				global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay newShape = new global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay(this.Partition);
@@ -298,11 +308,6 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			if(element is global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase)
 			{
 				global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorBaseDisplay newShape = new global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorBaseDisplay(this.Partition);
-				return newShape;
-			}
-			if(element is global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia)
-			{
-				global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay newShape = new global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -318,6 +323,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			base.InitializeShapeFields(shapeFields);
 			global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay.DecoratorsInitialized += ClaseDisplayDecoratorMap.OnDecoratorsInitialized;
 			global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorBaseDisplay.DecoratorsInitialized += ConectorBaseDisplayDecoratorMap.OnDecoratorsInitialized;
+			global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay.DecoratorsInitialized += ConectorAgregacionDIisplayDecoratorMap.OnDecoratorsInitialized;
 			global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay.DecoratorsInitialized += ConectorHerenciaDisplayDecoratorMap.OnDecoratorsInitialized;
 		}
 		
@@ -364,6 +370,26 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		}
 		
 		/// <summary>
+		/// Class containing decorator path traversal methods for ConectorAgregacionDIisplay.
+		/// </summary>
+		internal static partial class ConectorAgregacionDIisplayDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for ConectorAgregacionDIisplay.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				ConectorBaseDisplayDecoratorMap.OnDecoratorsInitialized(sender, e);
+				
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacion.TipoAgregacionDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TipoAgregacion").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
 		/// Class containing decorator path traversal methods for ConectorHerenciaDisplay.
 		/// </summary>
 		internal static partial class ConectorHerenciaDisplayDecoratorMap
@@ -373,8 +399,14 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			/// </summary>
 			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
 			{
-				ConectorBaseDisplayDecoratorMap.OnDecoratorsInitialized(sender, e);
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia.DisjuntaSolapadaDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "DisjuntaSolapada").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia.TotalParcialDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TotalParcial").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -560,9 +592,10 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// <summary>
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacion), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -970,6 +1003,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// so we can update the decorator host's bounds.
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacion), InitiallyDisabled=true)]
 		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
@@ -984,7 +1019,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase.DomainClassId);
 					}
-					decorator = global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay.FindConectorHerenciaDisplayDecorator("CardDestinoDisplay");
+					decorator = global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay.FindConectorAgregacionDIisplayDecorator("CardDestinoDisplay");
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase.DomainClassId);
@@ -997,7 +1032,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase.DomainClassId);
 					}
-					decorator = global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay.FindConectorHerenciaDisplayDecorator("CardOrigenDisplay");
+					decorator = global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay.FindConectorAgregacionDIisplayDecorator("CardOrigenDisplay");
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase.DomainClassId);
@@ -1010,10 +1045,34 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase.DomainClassId);
 					}
-					decorator = global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay.FindConectorHerenciaDisplayDecorator("NombreRelDisplay");
+					decorator = global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay.FindConectorAgregacionDIisplayDecorator("NombreRelDisplay");
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia.DisjuntaSolapadaDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay.FindConectorHerenciaDisplayDecorator("DisjuntaSolapada");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia.TotalParcialDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay.FindConectorHerenciaDisplayDecorator("TotalParcial");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacion.TipoAgregacionDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay.FindConectorAgregacionDIisplayDecorator("TipoAgregacion");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacion.DomainClassId);
 					}
 				}
 			}
@@ -1024,6 +1083,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacion), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

@@ -176,6 +176,9 @@
       </Target>
     </DomainRelationship>
     <DomainRelationship Id="af2c0db4-996f-45d9-a20a-594214fd30c1" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia" Name="RelacionHerencia" DisplayName="Relacion Herencia" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
+      <BaseRelationship>
+        <DomainRelationshipMoniker Name="RelacionBase" />
+      </BaseRelationship>
       <Properties>
         <DomainProperty Id="8eddb305-dab6-4a0d-b303-2f6c274ebadd" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia.Disjunta Solapada" Name="DisjuntaSolapada" DisplayName="Disjunta Solapada">
           <Type>
@@ -343,9 +346,20 @@
       </ConnectorHasDecorators>
     </Connector>
     <Connector Id="62a2d741-5b50-4a87-8a04-09a2a6220044" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.ConectorHerenciaDisplay" Name="ConectorHerenciaDisplay" DisplayName="Conector Herencia Display" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" FixedTooltipText="Conector Herencia Display">
+      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
+        <TextDecorator Name="DisjuntaSolapada" DisplayName="Disjunta Solapada" DefaultText="DisjuntaSolapada" />
+      </ConnectorHasDecorators>
+      <ConnectorHasDecorators Position="SourceBottom" OffsetFromShape="0" OffsetFromLine="0">
+        <TextDecorator Name="TotalParcial" DisplayName="Total Parcial" DefaultText="TotalParcial" />
+      </ConnectorHasDecorators>
+    </Connector>
+    <Connector Id="ff7378c1-173e-4f51-bbcd-b95516845c87" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay" Name="ConectorAgregacionDIisplay" DisplayName="Conector Agregacion DIisplay" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS" FixedTooltipText="Conector Agregacion DIisplay">
       <BaseConnector>
         <ConnectorMoniker Name="ConectorBaseDisplay" />
       </BaseConnector>
+      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
+        <TextDecorator Name="TipoAgregacion" DisplayName="Tipo Agregacion" DefaultText="TipoAgregacion" />
+      </ConnectorHasDecorators>
     </Connector>
   </Connectors>
   <XmlSerializationBehavior Name="DRMRRBRRMProyectoIPSSerializationBehavior" Namespace="UPM_IPS.DRMRRBRRMProyectoIPS">
@@ -479,6 +493,9 @@
             <DomainPropertyMoniker Name="Parametro/Tipo" />
           </XmlPropertyData>
         </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ConectorAgregacionDIisplay" MonikerAttributeName="" SerializeId="true" MonikerElementName="conectorAgregacionDIisplayMoniker" ElementName="conectorAgregacionDIisplay" MonikerTypeName="ConectorAgregacionDIisplayMoniker">
+        <ConnectorMoniker Name="ConectorAgregacionDIisplay" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -637,6 +654,34 @@
       <ConnectorMap>
         <ConnectorMoniker Name="ConectorHerenciaDisplay" />
         <DomainRelationshipMoniker Name="RelacionHerencia" />
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ConectorHerenciaDisplay/DisjuntaSolapada" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="RelacionHerencia/DisjuntaSolapada" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ConectorHerenciaDisplay/TotalParcial" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="RelacionHerencia/TotalParcial" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+      </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="ConectorAgregacionDIisplay" />
+        <DomainRelationshipMoniker Name="RelacionAgregacion" />
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ConectorAgregacionDIisplay/TipoAgregacion" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="RelacionAgregacion/TipoAgregacion" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
@@ -651,7 +696,7 @@
       <ElementTool Name="Clase" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Clase" Tooltip="Clase" HelpKeyword="Clase">
         <DomainClassMoniker Name="Clase" />
       </ElementTool>
-      <ConnectionTool Name="RelacionHerencia" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="RelacionHerencia" Tooltip="Relacion Herencia" HelpKeyword="RelacionHerencia">
+      <ConnectionTool Name="RelacionHerencia" ToolboxIcon="Resources\Sin_titulo.bmp" Caption="RelacionHerencia" Tooltip="Relacion Herencia" HelpKeyword="RelacionHerencia">
         <ConnectionBuilderMoniker Name="DRMRRBRRMProyectoIPS/RelacionHerenciaBuilder" />
       </ConnectionTool>
       <ConnectionTool Name="RelacionAgregacion" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="RelacionAgregacion" Tooltip="Relacion Agregacion" HelpKeyword="RelacionAgregacion">

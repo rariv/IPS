@@ -110,21 +110,6 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: RelacionHerencia -->
-          <xsd:element name="padre" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of RelacionHerencia</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element ref="relacionHerencia" minOccurs="0" maxOccurs="unbounded">
-                  <xsd:annotation>
-                    <xsd:documentation>[Instance of RelacionHerencia needs to be serialized in full-form]</xsd:documentation>
-                  </xsd:annotation>
-                </xsd:element>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -447,18 +432,10 @@
   </xsd:complexType>
   
   <!-- RelacionHerencia -->
-  <xsd:element name="relacionHerencia" type="RelacionHerencia" substitutionGroup="core:modelElement" />
+  <xsd:element name="relacionHerencia" type="RelacionHerencia" substitutionGroup="relacionBase" />
   <xsd:complexType name="RelacionHerencia">
     <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end Clase -->
-          <xsd:element ref="claseMoniker" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
+      <xsd:extension base="RelacionBase">
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
@@ -474,18 +451,13 @@
   </xsd:complexType>
   
   <!-- RelacionHerencia Moniker -->
-  <xsd:element name="relacionHerenciaMoniker" type="RelacionHerenciaMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:element name="relacionHerenciaMoniker" type="RelacionHerenciaMoniker" substitutionGroup="relacionBaseMoniker" />
   <xsd:complexType name="RelacionHerenciaMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for RelacionHerencia instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
+      <xsd:extension base="RelacionBaseMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

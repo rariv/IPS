@@ -725,6 +725,26 @@
     <value>Conector Herencia Display</value>
     <comment>DisplayName for DomainClass &apos;ConectorHerenciaDisplay&apos;</comment>
   </data>
+  <data name="ConectorHerenciaDisplayDisjuntaSolapadaDefaultText" xml:space="preserve">
+    <value>DisjuntaSolapada</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="ConectorHerenciaDisplayTotalParcialDefaultText" xml:space="preserve">
+    <value>TotalParcial</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay</value>
+    <comment>Description for DomainClass &apos;ConectorAgregacionDIisplay&apos;</comment>
+  </data>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.ConectorAgregacionDIisplay.DisplayName" xml:space="preserve">
+    <value>Conector Agregacion DIisplay</value>
+    <comment>DisplayName for DomainClass &apos;ConectorAgregacionDIisplay&apos;</comment>
+  </data>
+  <data name="ConectorAgregacionDIisplayTipoAgregacionDefaultText" xml:space="preserve">
+    <value>TipoAgregacion</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="FormatList" xml:space="preserve">
     <value>DRMRRBRRMProyectoIPS (*.DRMRRBRRM_DSLProyIPS)|*.DRMRRBRRM_DSLProyIPS</value>
     <comment>A list of file format specifiers for the Save dialog box</comment>
@@ -907,7 +927,7 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="RelacionHerenciaToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sin_titulo.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="RelacionAgregacionToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">

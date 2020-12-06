@@ -1219,7 +1219,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship()]
 	[DslModeling::DomainObjectId("af2c0db4-996f-45d9-a20a-594214fd30c1")]
-	public partial class RelacionHerencia : DslModeling::ElementLink
+	public partial class RelacionHerencia : RelacionBase
 	{
 		#region Constructors, domain class Id
 		
@@ -1323,12 +1323,33 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			return GetRoleCollection<DslModeling::LinkedElementCollection<Clase>, Clase>(element, TargetClaseDomainRoleId);
 		}
 		#endregion
+		#region SourceClase domain role override
+		
+		/// <summary>
+		/// Gets the element playing Hijo domain role.
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.RelacionBase.SourceClase
+		/// </summary>
+		public override Clase SourceClase
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return this.Hijo;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				this.Hijo = value;
+			}
+		}
+		
+		#endregion
 		#region TargetClase domain role code
 		
 		/// <summary>
 		/// TargetClase domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid TargetClaseDomainRoleId = new global::System.Guid(0x66c424c7, 0x2e92, 0x4ee9, 0x84, 0xa3, 0xf6, 0xcb, 0x49, 0xd3, 0x63, 0x95);
+		public static readonly new global::System.Guid TargetClaseDomainRoleId = new global::System.Guid(0x66c424c7, 0x2e92, 0x4ee9, 0x84, 0xa3, 0xf6, 0xcb, 0x49, 0xd3, 0x63, 0x95);
 		
 		/// <summary>
 		/// DomainRole TargetClase
@@ -1338,7 +1359,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia/TargetClase.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Hijo", PropertyDisplayNameKey="UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia/TargetClase.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("66c424c7-2e92-4ee9-84a3-f6cb49d36395")]
-		public virtual Clase TargetClase
+		public override Clase TargetClase
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
@@ -1567,7 +1588,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia> GetLinks( global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase source, global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase target )
+		public static new global::System.Collections.ObjectModel.ReadOnlyCollection<global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia> GetLinks( global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase source, global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase target )
 		{
 			global::System.Collections.Generic.List<global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia> outLinks = new global::System.Collections.Generic.List<global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia>();
 			global::System.Collections.Generic.IList<global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia> links = DslModeling::DomainRoleInfo.GetElementLinks<global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia>(source, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia.HijoDomainRoleId);
@@ -1585,7 +1606,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia GetLink( global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase source, global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase target )
+		public static new global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia GetLink( global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase source, global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase target )
 		{
 			global::System.Collections.Generic.IList<global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia> links = DslModeling::DomainRoleInfo.GetElementLinks<global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia>(source, global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia.HijoDomainRoleId);
 			foreach ( global::UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerencia link in links )
