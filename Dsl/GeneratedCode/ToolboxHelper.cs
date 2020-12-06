@@ -47,6 +47,18 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// item filters.
 		/// </remarks>
 		public const string ToolboxFilterString = "DRMRRBRRMProyectoIPS.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify RelacionHerencia connector tool.
+		/// </summary>
+		public const string RelacionHerenciaFilterString = "RelacionHerencia.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify RelacionAgregacion connector tool.
+		/// </summary>
+		public const string RelacionAgregacionFilterString = "RelacionAgregacion.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify RelacionAsociacion connector tool.
+		/// </summary>
+		public const string RelacionAsociacionFilterString = "RelacionAsociacion.1.0";
 
 	
 		private global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem> toolboxItemCache = new global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem>();
@@ -94,7 +106,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		{
 			get
 			{
-				return 1;
+				return 4;
 			}
 		}
 		
@@ -157,6 +169,60 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 						CreateElementToolPrototype(store, global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerenciaToolboxItem":
+
+					// Add RelacionHerencia connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerenciaToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						2, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("RelacionHerenciaToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("RelacionHerenciaToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("DRMRRBRRMProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"RelacionHerencia", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("RelacionHerenciaToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(RelacionHerenciaFilterString)
+						});
+					break;
+				case "UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacionToolboxItem":
+
+					// Add RelacionAgregacion connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacionToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						3, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("RelacionAgregacionToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("RelacionAgregacionToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("DRMRRBRRMProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"RelacionAgregacion", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("RelacionAgregacionToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(RelacionAgregacionFilterString)
+						});
+					break;
+				case "UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAsociacionToolboxItem":
+
+					// Add RelacionAsociacion connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAsociacionToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						4, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("RelacionAsociacionToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("RelacionAsociacionToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("DRMRRBRRMProyectoIPSToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"RelacionAsociacion", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("RelacionAsociacionToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(RelacionAsociacionFilterString)
 						});
 					break;
 				default:

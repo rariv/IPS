@@ -37,6 +37,30 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 					"@ClaseToolboxBitmap;UPM_IPS.DRMRRBRRMProyectoIPS.Dsl.dll", 
 					0xff00ff,
 					Index = 0)]
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSToolboxTab",
+					"@RelacionHerenciaToolboxItem;UPM_IPS.DRMRRBRRMProyectoIPS.Dsl.dll", 
+					"UPM_IPS.DRMRRBRRMProyectoIPS.RelacionHerenciaToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"RelacionHerencia", 
+					"@RelacionHerenciaToolboxBitmap;UPM_IPS.DRMRRBRRMProyectoIPS.Dsl.dll", 
+					0xff00ff,
+					Index = 1)]
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSToolboxTab",
+					"@RelacionAgregacionToolboxItem;UPM_IPS.DRMRRBRRMProyectoIPS.Dsl.dll", 
+					"UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAgregacionToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"RelacionAgregacion", 
+					"@RelacionAgregacionToolboxBitmap;UPM_IPS.DRMRRBRRMProyectoIPS.Dsl.dll", 
+					0xff00ff,
+					Index = 2)]
+	[VSShell::ProvideStaticToolboxItem("UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSToolboxTab",
+					"@RelacionAsociacionToolboxItem;UPM_IPS.DRMRRBRRMProyectoIPS.Dsl.dll", 
+					"UPM_IPS.DRMRRBRRMProyectoIPS.RelacionAsociacionToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"RelacionAsociacion", 
+					"@RelacionAsociacionToolboxBitmap;UPM_IPS.DRMRRBRRMProyectoIPS.Dsl.dll", 
+					0xff00ff,
+					Index = 3)]
 	[VSShell::ProvideEditorFactory(typeof(DRMRRBRRMProyectoIPSEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(DRMRRBRRMProyectoIPSEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(DRMRRBRRMProyectoIPSEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

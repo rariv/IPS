@@ -14,15 +14,15 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace UPM_IPS.DRMRRBRRMProyectoIPS
 {
 	/// <summary>
-	/// DomainClass CompartmentShape1
-	/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentShape1
+	/// DomainClass ClaseDisplay
+	/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay
 	/// </summary>
-	[DslDesign::DisplayNameResource("UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentShape1.DisplayName", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentShape1.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay.DisplayName", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("03b98533-9b60-4c3e-ae84-b0c8a71aa644")]
-	public partial class CompartmentShape1 : DslDiagrams::CompartmentShape
+	public partial class ClaseDisplay : DslDiagrams::CompartmentShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -87,9 +87,9 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with CompartmentShape1.
+		/// Finds a decorator associated with ClaseDisplay.
 		/// </summary>
-		public static DslDiagrams::Decorator FindCompartmentShape1Decorator(string decoratorName)
+		public static DslDiagrams::Decorator FindClaseDisplayDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -136,6 +136,11 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		{
 			base.InitializeResources(classStyleSet);
 			
+			// Fill brush settings for this shape.
+			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
+			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.PaleTurquoise);
+			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
+		
 			// Custom font styles
 			DslDiagrams::FontSettings fontSettings;
 			fontSettings = new DslDiagrams::FontSettings();
@@ -174,7 +179,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		{
 			base.InitializeShapeFields(shapeFields);
 			DslDiagrams::TextField field1 = new DslDiagrams::TextField("NombreDisplay");
-			field1.DefaultText = global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel.SingletonResourceManager.GetString("CompartmentShape1NombreDisplayDefaultText");
+			field1.DefaultText = global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel.SingletonResourceManager.GetString("ClaseDisplayNombreDisplayDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -250,14 +255,14 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				{
 					localCompartmentsOffset = baseCompartmentDescriptions.Length;
 				}
-				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[1+localCompartmentsOffset];
+				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[2+localCompartmentsOffset];
 				
 				if(baseCompartmentDescriptions!=null)
 				{
 					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
 				}
 				{
-					string title = global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel.SingletonResourceManager.GetString("CompartmentShape1AtributosTitle");
+					string title = global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel.SingletonResourceManager.GetString("ClaseDisplayAtributosTitle");
 					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("Atributos", title, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
@@ -265,9 +270,18 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 						false);
 					compartmentDescriptions[localCompartmentsOffset+0] = descriptor;
 				}
+				{
+					string title = global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel.SingletonResourceManager.GetString("ClaseDisplayOperacionesTitle");
+					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("Operaciones", title, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
+						null, null,
+						false);
+					compartmentDescriptions[localCompartmentsOffset+1] = descriptor;
+				}
 			}
 			
-			return CompartmentShape1.compartmentDescriptions;
+			return ClaseDisplay.compartmentDescriptions;
 		}
 		
 		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
@@ -297,13 +311,21 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 					{
 						localCompartmentMappingsOffset = baseMappings.Length;
 					}
-					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[1+localCompartmentMappingsOffset];
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[2+localCompartmentMappingsOffset];
 					
 					if(baseMappings!=null)
 					{
 						baseMappings.CopyTo(mappings, 0);
 					}
 					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
+																				"Operaciones", 
+																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.NombreOperacionDomainPropertyId, 
+																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.DomainClassId, 
+																				GetElementsFromClaseForOperaciones,
+																				null,
+																				null,
+																				null);
+					mappings[localCompartmentMappingsOffset+1] = new DslDiagrams::ElementListCompartmentMapping(
 																				"Atributos", 
 																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.NombreAtributoDomainPropertyId, 
 																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.DomainClassId, 
@@ -340,6 +362,13 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		}
 		
 			#region DomainPath traversal methods to get the list of elements to display in a compartment.
+			internal static global::System.Collections.IList GetElementsFromClaseForOperaciones(DslModeling::ModelElement rootElement)
+			{
+				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase root = (global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase)rootElement;
+					// Segments 0 and 1
+					DslModeling::LinkedElementCollection<global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion> result = root.Operacion;
+				return result;
+			}
 			internal static global::System.Collections.IList GetElementsFromClaseForAtributos(DslModeling::ModelElement rootElement)
 			{
 				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase root = (global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase)rootElement;
@@ -353,7 +382,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// CompartmentShape1 domain class Id.
+		/// ClaseDisplay domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x03b98533, 0x9b60, 0x4c3e, 0xae, 0x84, 0xb0, 0xc8, 0xa7, 0x1a, 0xa6, 0x44);
 		/// <summary>
@@ -361,7 +390,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CompartmentShape1(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ClaseDisplay(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -371,7 +400,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CompartmentShape1(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ClaseDisplay(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

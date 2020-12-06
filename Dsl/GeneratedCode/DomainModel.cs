@@ -70,11 +70,23 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				typeof(FONDO),
 				typeof(Clase),
 				typeof(Atributo),
+				typeof(Operacion),
+				typeof(Parametro),
 				typeof(FONDOHasClase),
 				typeof(ClaseHasAtributo),
+				typeof(RelacionBase),
+				typeof(ClaseHasOperacion),
+				typeof(RelacionHerencia),
+				typeof(RelacionAgregacion),
+				typeof(RelacionAsociacion),
+				typeof(OperacionHasParametro),
 				typeof(DRMRRBRRMProyectoIPSDiagram),
-				typeof(CompartmentShape1),
+				typeof(ConectorBaseDisplay),
+				typeof(ConectorHerenciaDisplay),
+				typeof(ClaseDisplay),
 				typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.FixUpDiagram),
+				typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DecoratorPropertyChanged),
+				typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ConnectorRolePlayerChanged),
 				typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentItemAddRule),
 				typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentItemDeleteRule),
 				typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentItemRolePlayerChangeRule),
@@ -93,6 +105,17 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			{
 				new DomainMemberInfo(typeof(Clase), "Nombre", Clase.NombreDomainPropertyId, typeof(Clase.NombrePropertyHandler)),
 				new DomainMemberInfo(typeof(Atributo), "NombreAtributo", Atributo.NombreAtributoDomainPropertyId, typeof(Atributo.NombreAtributoPropertyHandler)),
+				new DomainMemberInfo(typeof(Atributo), "TIpo", Atributo.TIpoDomainPropertyId, typeof(Atributo.TIpoPropertyHandler)),
+				new DomainMemberInfo(typeof(Operacion), "NombreOperacion", Operacion.NombreOperacionDomainPropertyId, typeof(Operacion.NombreOperacionPropertyHandler)),
+				new DomainMemberInfo(typeof(Operacion), "Tipo", Operacion.TipoDomainPropertyId, typeof(Operacion.TipoPropertyHandler)),
+				new DomainMemberInfo(typeof(Parametro), "Nombre", Parametro.NombreDomainPropertyId, typeof(Parametro.NombrePropertyHandler)),
+				new DomainMemberInfo(typeof(Parametro), "Tipo", Parametro.TipoDomainPropertyId, typeof(Parametro.TipoPropertyHandler)),
+				new DomainMemberInfo(typeof(RelacionBase), "CardOrigen", RelacionBase.CardOrigenDomainPropertyId, typeof(RelacionBase.CardOrigenPropertyHandler)),
+				new DomainMemberInfo(typeof(RelacionBase), "CardDestino", RelacionBase.CardDestinoDomainPropertyId, typeof(RelacionBase.CardDestinoPropertyHandler)),
+				new DomainMemberInfo(typeof(RelacionBase), "NombreRel", RelacionBase.NombreRelDomainPropertyId, typeof(RelacionBase.NombreRelPropertyHandler)),
+				new DomainMemberInfo(typeof(RelacionHerencia), "DisjuntaSolapada", RelacionHerencia.DisjuntaSolapadaDomainPropertyId, typeof(RelacionHerencia.DisjuntaSolapadaPropertyHandler)),
+				new DomainMemberInfo(typeof(RelacionHerencia), "TotalParcial", RelacionHerencia.TotalParcialDomainPropertyId, typeof(RelacionHerencia.TotalParcialPropertyHandler)),
+				new DomainMemberInfo(typeof(RelacionAgregacion), "TipoAgregacion", RelacionAgregacion.TipoAgregacionDomainPropertyId, typeof(RelacionAgregacion.TipoAgregacionPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -107,6 +130,18 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				new DomainRolePlayerInfo(typeof(FONDOHasClase), "Clase", FONDOHasClase.ClaseDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ClaseHasAtributo), "Clase", ClaseHasAtributo.ClaseDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ClaseHasAtributo), "Atributo", ClaseHasAtributo.AtributoDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RelacionBase), "SourceClase", RelacionBase.SourceClaseDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RelacionBase), "TargetClase", RelacionBase.TargetClaseDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClaseHasOperacion), "Clase", ClaseHasOperacion.ClaseDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClaseHasOperacion), "Operacion", ClaseHasOperacion.OperacionDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RelacionHerencia), "Hijo", RelacionHerencia.HijoDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RelacionHerencia), "TargetClase", RelacionHerencia.TargetClaseDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RelacionAgregacion), "SourceClase", RelacionAgregacion.SourceClaseDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RelacionAgregacion), "TargetClase", RelacionAgregacion.TargetClaseDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RelacionAsociacion), "SourceClase", RelacionAsociacion.SourceClaseDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RelacionAsociacion), "TargetClase", RelacionAsociacion.TargetClaseDomainRoleId),
+				new DomainRolePlayerInfo(typeof(OperacionHasParametro), "Operacion", OperacionHasParametro.OperacionDomainRoleId),
+				new DomainRolePlayerInfo(typeof(OperacionHasParametro), "Parametro", OperacionHasParametro.ParametroDomainRoleId),
 			};
 		}
 		#endregion
@@ -128,12 +163,16 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(5);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(9);
 				createElementMap.Add(typeof(FONDO), 0);
 				createElementMap.Add(typeof(Clase), 1);
 				createElementMap.Add(typeof(Atributo), 2);
-				createElementMap.Add(typeof(DRMRRBRRMProyectoIPSDiagram), 3);
-				createElementMap.Add(typeof(CompartmentShape1), 4);
+				createElementMap.Add(typeof(Operacion), 3);
+				createElementMap.Add(typeof(Parametro), 4);
+				createElementMap.Add(typeof(DRMRRBRRMProyectoIPSDiagram), 5);
+				createElementMap.Add(typeof(ConectorBaseDisplay), 6);
+				createElementMap.Add(typeof(ConectorHerenciaDisplay), 7);
+				createElementMap.Add(typeof(ClaseDisplay), 8);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -150,8 +189,12 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				case 0: return new FONDO(partition, propertyAssignments);
 				case 1: return new Clase(partition, propertyAssignments);
 				case 2: return new Atributo(partition, propertyAssignments);
-				case 3: return new DRMRRBRRMProyectoIPSDiagram(partition, propertyAssignments);
-				case 4: return new CompartmentShape1(partition, propertyAssignments);
+				case 3: return new Operacion(partition, propertyAssignments);
+				case 4: return new Parametro(partition, propertyAssignments);
+				case 5: return new DRMRRBRRMProyectoIPSDiagram(partition, propertyAssignments);
+				case 6: return new ConectorBaseDisplay(partition, propertyAssignments);
+				case 7: return new ConectorHerenciaDisplay(partition, propertyAssignments);
+				case 8: return new ClaseDisplay(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -174,9 +217,15 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(8);
 				createElementLinkMap.Add(typeof(FONDOHasClase), 0);
 				createElementLinkMap.Add(typeof(ClaseHasAtributo), 1);
+				createElementLinkMap.Add(typeof(RelacionBase), 2);
+				createElementLinkMap.Add(typeof(ClaseHasOperacion), 3);
+				createElementLinkMap.Add(typeof(RelacionHerencia), 4);
+				createElementLinkMap.Add(typeof(RelacionAgregacion), 5);
+				createElementLinkMap.Add(typeof(RelacionAsociacion), 6);
+				createElementLinkMap.Add(typeof(OperacionHasParametro), 7);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -193,6 +242,12 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			{
 				case 0: return new FONDOHasClase(partition, roleAssignments, propertyAssignments);
 				case 1: return new ClaseHasAtributo(partition, roleAssignments, propertyAssignments);
+				case 2: return new RelacionBase(partition, roleAssignments, propertyAssignments);
+				case 3: return new ClaseHasOperacion(partition, roleAssignments, propertyAssignments);
+				case 4: return new RelacionHerencia(partition, roleAssignments, propertyAssignments);
+				case 5: return new RelacionAgregacion(partition, roleAssignments, propertyAssignments);
+				case 6: return new RelacionAsociacion(partition, roleAssignments, propertyAssignments);
+				case 7: return new OperacionHasParametro(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -313,6 +368,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.EnableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.FixUpDiagram));
+			ruleManager.EnableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DecoratorPropertyChanged));
+			ruleManager.EnableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ConnectorRolePlayerChanged));
 			ruleManager.EnableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentItemAddRule));
 			ruleManager.EnableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentItemDeleteRule));
 			ruleManager.EnableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentItemRolePlayerChangeRule));
@@ -329,6 +386,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.DisableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.FixUpDiagram));
+			ruleManager.DisableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DecoratorPropertyChanged));
+			ruleManager.DisableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ConnectorRolePlayerChanged));
 			ruleManager.DisableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentItemAddRule));
 			ruleManager.DisableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentItemDeleteRule));
 			ruleManager.DisableRule(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.CompartmentItemRolePlayerChangeRule));
@@ -371,6 +430,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			#region Initialize DomainData Table
 			DomainRoles.Add(global::UPM_IPS.DRMRRBRRMProyectoIPS.FONDOHasClase.ClaseDomainRoleId, true);
 			DomainRoles.Add(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo.AtributoDomainRoleId, true);
+			DomainRoles.Add(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion.OperacionDomainRoleId, true);
+			DomainRoles.Add(global::UPM_IPS.DRMRRBRRMProyectoIPS.OperacionHasParametro.ParametroDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>
@@ -444,5 +505,174 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 	}
 	#endregion
 		
+}
+namespace UPM_IPS.DRMRRBRRMProyectoIPS
+{
+	/// <summary>
+	/// DomainEnumeration: TipoAgregacion
+	/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoAgregacion
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum TipoAgregacion
+	{
+		/// <summary>
+		/// Inclusiva
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoAgregacion.Inclusiva
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TipoAgregacion/Inclusiva.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Inclusiva,
+		/// <summary>
+		/// Referencial
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoAgregacion.Referencial
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TipoAgregacion/Referencial.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Referencial,
+	}
+}
+namespace UPM_IPS.DRMRRBRRMProyectoIPS
+{
+	/// <summary>
+	/// DomainEnumeration: Cardinalidades
+	/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum Cardinalidades
+	{
+		/// <summary>
+		/// Ol
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades.Ol
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades/Ol.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Ol,
+		/// <summary>
+		/// ON
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades.ON
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades/ON.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		ON,
+		/// <summary>
+		/// l
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades.l
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades/l.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		l,
+		/// <summary>
+		/// IN
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades.IN
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades/IN.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		IN,
+		/// <summary>
+		/// O
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades.O
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades/O.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		O,
+		/// <summary>
+		/// NM
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades.NM
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Cardinalidades/NM.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		NM,
+	}
+}
+namespace UPM_IPS.DRMRRBRRMProyectoIPS
+{
+	/// <summary>
+	/// DomainEnumeration: DisjuntaSolapada
+	/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.DisjuntaSolapada
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum DisjuntaSolapada
+	{
+		/// <summary>
+		/// Disjunta
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.DisjuntaSolapada.Disjunta
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.DisjuntaSolapada/Disjunta.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Disjunta,
+		/// <summary>
+		/// Solapada
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.DisjuntaSolapada.Solapada
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.DisjuntaSolapada/Solapada.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Solapada,
+	}
+}
+namespace UPM_IPS.DRMRRBRRMProyectoIPS
+{
+	/// <summary>
+	/// DomainEnumeration: TotalParcial
+	/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TotalParcial
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum TotalParcial
+	{
+		/// <summary>
+		/// Total
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TotalParcial.Total
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TotalParcial/Total.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Total,
+		/// <summary>
+		/// Parcial
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TotalParcial.Parcial
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TotalParcial/Parcial.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Parcial,
+	}
+}
+namespace UPM_IPS.DRMRRBRRMProyectoIPS
+{
+	/// <summary>
+	/// DomainEnumeration: TipoDeDato
+	/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum TipoDeDato
+	{
+		/// <summary>
+		/// Int
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato.Int
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato/Int.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Int,
+		/// <summary>
+		/// Long
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato.Long
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato/Long.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Long,
+		/// <summary>
+		/// Float
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato.Float
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato/Float.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Float,
+		/// <summary>
+		/// Double
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato.Double
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato/Double.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Double,
+		/// <summary>
+		/// Char
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato.Char
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato/Char.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Char,
+		/// <summary>
+		/// String
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato.String
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato/String.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		String,
+		/// <summary>
+		/// Bool
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato.Bool
+		/// </summary>
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.TipoDeDato/Bool.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		Bool,
+	}
 }
 
