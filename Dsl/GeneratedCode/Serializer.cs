@@ -1868,20 +1868,20 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 					}
 				}
 			}
-			// TIpo
+			// TipoDato
 			if (!serializationContext.Result.Failed)
 			{
-				string attribTIpo = DRMRRBRRMProyectoIPSSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "tIpo");
-				if (attribTIpo != null)
+				string attribTipoDato = DRMRRBRRMProyectoIPSSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "tipoDato");
+				if (attribTipoDato != null)
 				{
-					TipoDeDato valueOfTIpo;
-					if (DslModeling::SerializationUtilities.TryGetValue<TipoDeDato>(serializationContext, attribTIpo, out valueOfTIpo))
+					TipoDeDato valueOfTipoDato;
+					if (DslModeling::SerializationUtilities.TryGetValue<TipoDeDato>(serializationContext, attribTipoDato, out valueOfTipoDato))
 					{
-						instanceOfAtributo.TIpo = valueOfTIpo;
+						instanceOfAtributo.TipoDato = valueOfTipoDato;
 					}
 					else
 					{	// Invalid property value, ignored.
-						DRMRRBRRMProyectoIPSSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "tIpo", typeof(TipoDeDato), attribTIpo);
+						DRMRRBRRMProyectoIPSSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "tipoDato", typeof(TipoDeDato), attribTipoDato);
 					}
 				}
 			}
@@ -2321,14 +2321,14 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 	
 				}
 			}
-			// TIpo
+			// TipoDato
 			if (!serializationContext.Result.Failed)
 			{
-				TipoDeDato propValue = instanceOfAtributo.TIpo;
+				TipoDeDato propValue = instanceOfAtributo.TipoDato;
 				string serializedPropValue = DslModeling::SerializationUtilities.GetString<TipoDeDato>(serializationContext, propValue);
 				if (!serializationContext.Result.Failed)
 				{
-					DRMRRBRRMProyectoIPSSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "tIpo", serializedPropValue);
+					DRMRRBRRMProyectoIPSSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "tipoDato", serializedPropValue);
 				}
 			}
 		}

@@ -327,7 +327,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 																				null);
 					mappings[localCompartmentMappingsOffset+1] = new DslDiagrams::ElementListCompartmentMapping(
 																				"Atributos", 
-																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.NombreAtributoDomainPropertyId, 
+																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.CalculatedUnionDomainPropertyId, 
 																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.DomainClassId, 
 																				GetElementsFromClaseForAtributos,
 																				null,

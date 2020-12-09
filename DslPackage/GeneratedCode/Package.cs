@@ -7,25 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Diagnostics;
-using System.Drawing.Design;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using VSShellInterop = global::Microsoft.VisualStudio.Shell.Interop;
 using VSShell = global::Microsoft.VisualStudio.Shell;
 using DslShell = global::Microsoft.VisualStudio.Modeling.Shell;
 using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 using DslModeling = global::Microsoft.VisualStudio.Modeling;
-
+using System;
+using System.Diagnostics;
+using System.Drawing.Design;
+using System.Linq;
+using System.Windows.Forms;
+	
 namespace UPM_IPS.DRMRRBRRMProyectoIPS
 {
 	/// <summary>
 	/// This class implements the VS package that integrates this DSL into Visual Studio.
 	/// </summary>
-	[VSShell::PackageRegistration(RegisterUsing = VSShell::RegistrationMethod.Assembly, UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
+	[VSShell::DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\15.0")]
+	[VSShell::PackageRegistration(RegisterUsing = VSShell::RegistrationMethod.Assembly, UseManagedResourcesOnly = true)]
 	[VSShell::ProvideToolWindow(typeof(DRMRRBRRMProyectoIPSExplorerToolWindow), MultiInstances = false, Style = VSShell::VsDockStyle.Tabbed, Orientation = VSShell::ToolWindowOrientation.Right, Window = "{3AE79031-E1BC-11D0-8F78-00A0C9110057}")]
 	[VSShell::ProvideToolWindowVisibility(typeof(DRMRRBRRMProyectoIPSExplorerToolWindow), Constants.DRMRRBRRMProyectoIPSEditorFactoryId)]
 	[VSShell::ProvideStaticToolboxGroup("@DRMRRBRRMProyectoIPSToolboxTab;UPM_IPS.DRMRRBRRMProyectoIPS.Dsl.dll", "UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSToolboxTab")]
@@ -75,16 +74,16 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 	[DslShell::ProvideBindingPath]
 	[DslShell::ProvideXmlEditorChooserBlockSxSWithXmlEditor(@"DRMRRBRRMProyectoIPS", typeof(DRMRRBRRMProyectoIPSEditorFactory))]
 
-	internal abstract partial class DRMRRBRRMProyectoIPSPackageBase : DslShell::AsyncModelingPackage
+	internal abstract partial class DRMRRBRRMProyectoIPSPackageBase : DslShell::ModelingPackage
 	{
 		protected global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSToolboxHelper toolboxHelper;	
 		
 		/// <summary>
 		/// Initialization method called by the package base class when this package is loaded.
 		/// </summary>
-		protected async override Task InitializeAsync(CancellationToken cancellationToken, IProgress<VSShell.ServiceProgressData> progress)
+		protected override void Initialize()
 		{
-			await base.InitializeAsync(cancellationToken, progress);
+			base.Initialize();
 
 			// Register the editor factory used to create the DSL editor.
 			this.RegisterEditorFactory(new DRMRRBRRMProyectoIPSEditorFactory(this));
@@ -94,28 +93,21 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 
 			// Create the command set that handles menu commands provided by this package.
 			DRMRRBRRMProyectoIPSCommandSet commandSet = new DRMRRBRRMProyectoIPSCommandSet(this);
-			await commandSet.InitializeAsync(cancellationToken);
+			commandSet.Initialize();
 			
 			// Create the command set that handles cut/copy/paste commands provided by this package.
 			DRMRRBRRMProyectoIPSClipboardCommandSet clipboardCommandSet = new DRMRRBRRMProyectoIPSClipboardCommandSet(this);
-			await clipboardCommandSet.InitializeAsync(cancellationToken);
+			clipboardCommandSet.Initialize();
 			
 			// Register the model explorer tool window for this DSL.
 			this.AddToolWindow(typeof(DRMRRBRRMProyectoIPSExplorerToolWindow));
-
-			if (cancellationToken.IsCancellationRequested)
-			{
-				return;
-			}
-
-			await JoinableTaskFactory.SwitchToMainThreadAsync();
 
 			// Initialize Extension Registars
 			// this is a partial method call
 			this.InitializeExtensions();
 
 			// Add dynamic toolbox items
-			await this.SetupDynamicToolboxAsync(cancellationToken);
+			this.SetupDynamicToolbox();
 		}
 
 		/// <summary>
@@ -134,7 +126,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				Debug.Assert(toolboxHelper != null, "Toolbox helper is not initialized");
 				return toolboxHelper.CreateToolboxItems();
 			}
-			catch (global::System.Exception e)
+			catch(global::System.Exception e)
 			{
 				global::System.Diagnostics.Debug.Fail("Exception thrown during toolbox item creation.  This may result in Package Load Failure:\r\n\r\n" + e);
 				throw;
@@ -155,17 +147,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			// Retrieve the specified ToolboxItem from the DSL
 			return toolboxHelper.GetToolboxItemData(itemId, format);
 		}
-
-		public override VSShellInterop::IVsAsyncToolWindowFactory GetAsyncToolWindowFactory(Guid toolWindowType)
-		{
-			if (toolWindowType == typeof(DRMRRBRRMProyectoIPSExplorerToolWindow).GUID)
-			{
-				return this;
-			}
-
-			return base.GetAsyncToolWindowFactory(toolWindowType);
-		}
 	}
+
 }
 
 //

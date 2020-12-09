@@ -165,13 +165,21 @@
     <value>Nombre Atributo</value>
     <comment>DisplayName for DomainProperty &apos;NombreAtributo&apos; on DomainClass &apos;Atributo&apos;</comment>
   </data>
-  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/TIpo.Description" xml:space="preserve">
-    <value>Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.TIpo</value>
-    <comment>Description for DomainProperty &apos;TIpo&apos; on DomainClass &apos;Atributo&apos;</comment>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/TipoDato.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.Tipo Dato</value>
+    <comment>Description for DomainProperty &apos;TipoDato&apos; on DomainClass &apos;Atributo&apos;</comment>
   </data>
-  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/TIpo.DisplayName" xml:space="preserve">
-    <value>TIpo</value>
-    <comment>DisplayName for DomainProperty &apos;TIpo&apos; on DomainClass &apos;Atributo&apos;</comment>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/TipoDato.DisplayName" xml:space="preserve">
+    <value>Tipo Dato</value>
+    <comment>DisplayName for DomainProperty &apos;TipoDato&apos; on DomainClass &apos;Atributo&apos;</comment>
+  </data>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/CalculatedUnion.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.Calculated Union</value>
+    <comment>Description for DomainProperty &apos;CalculatedUnion&apos; on DomainClass &apos;Atributo&apos;</comment>
+  </data>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/CalculatedUnion.DisplayName" xml:space="preserve">
+    <value>Calculated Union</value>
+    <comment>DisplayName for DomainProperty &apos;CalculatedUnion&apos; on DomainClass &apos;Atributo&apos;</comment>
   </data>
   <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.Description" xml:space="preserve">
     <value>Description for UPM_IPS.DRMRRBRRMProyectoIPS.Operacion</value>

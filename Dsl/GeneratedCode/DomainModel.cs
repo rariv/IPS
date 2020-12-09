@@ -106,7 +106,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			{
 				new DomainMemberInfo(typeof(Clase), "Nombre", Clase.NombreDomainPropertyId, typeof(Clase.NombrePropertyHandler)),
 				new DomainMemberInfo(typeof(Atributo), "NombreAtributo", Atributo.NombreAtributoDomainPropertyId, typeof(Atributo.NombreAtributoPropertyHandler)),
-				new DomainMemberInfo(typeof(Atributo), "TIpo", Atributo.TIpoDomainPropertyId, typeof(Atributo.TIpoPropertyHandler)),
+				new DomainMemberInfo(typeof(Atributo), "TipoDato", Atributo.TipoDatoDomainPropertyId, typeof(Atributo.TipoDatoPropertyHandler)),
+				new DomainMemberInfo(typeof(Atributo), "CalculatedUnion", Atributo.CalculatedUnionDomainPropertyId, typeof(Atributo.CalculatedUnionPropertyHandler)),
 				new DomainMemberInfo(typeof(Operacion), "NombreOperacion", Operacion.NombreOperacionDomainPropertyId, typeof(Operacion.NombreOperacionPropertyHandler)),
 				new DomainMemberInfo(typeof(Operacion), "Tipo", Operacion.TipoDomainPropertyId, typeof(Operacion.TipoPropertyHandler)),
 				new DomainMemberInfo(typeof(Parametro), "Nombre", Parametro.NombreDomainPropertyId, typeof(Parametro.NombrePropertyHandler)),

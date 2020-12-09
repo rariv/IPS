@@ -47,9 +47,14 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="74bd9ae0-fead-449d-ba88-6239b585259a" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.TIpo" Name="TIpo" DisplayName="TIpo">
+        <DomainProperty Id="74bd9ae0-fead-449d-ba88-6239b585259a" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.Tipo Dato" Name="TipoDato" DisplayName="Tipo Dato">
           <Type>
             <DomainEnumerationMoniker Name="TipoDeDato" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="06fa1906-6c53-456b-b767-71b56e96c2ea" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.Calculated Union" Name="CalculatedUnion" DisplayName="Calculated Union" Kind="Calculated" IsBrowsable="false" IsUIReadOnly="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
       </Properties>
@@ -416,8 +421,11 @@
           <XmlPropertyData XmlName="nombreAtributo">
             <DomainPropertyMoniker Name="Atributo/NombreAtributo" />
           </XmlPropertyData>
-          <XmlPropertyData XmlName="tIpo">
-            <DomainPropertyMoniker Name="Atributo/TIpo" />
+          <XmlPropertyData XmlName="tipoDato">
+            <DomainPropertyMoniker Name="Atributo/TipoDato" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="calculatedUnion" Representation="Ignore">
+            <DomainPropertyMoniker Name="Atributo/CalculatedUnion" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -616,7 +624,7 @@
           </ElementsDisplayed>
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="Atributo/NombreAtributo" />
+              <DomainPropertyMoniker Name="Atributo/CalculatedUnion" />
             </PropertyPath>
           </PropertyDisplayed>
         </CompartmentMap>

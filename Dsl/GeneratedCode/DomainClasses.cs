@@ -712,59 +712,59 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		}
 		
 		#endregion
-		#region TIpo domain property code
+		#region TipoDato domain property code
 		
 		/// <summary>
-		/// TIpo domain property Id.
+		/// TipoDato domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid TIpoDomainPropertyId = new global::System.Guid(0x74bd9ae0, 0xfead, 0x449d, 0xba, 0x88, 0x62, 0x39, 0xb5, 0x85, 0x25, 0x9a);
+		public static readonly global::System.Guid TipoDatoDomainPropertyId = new global::System.Guid(0x74bd9ae0, 0xfead, 0x449d, 0xba, 0x88, 0x62, 0x39, 0xb5, 0x85, 0x25, 0x9a);
 		
 		/// <summary>
-		/// Storage for TIpo
+		/// Storage for TipoDato
 		/// </summary>
-		private TipoDeDato tIpoPropertyStorage;
+		private TipoDeDato tipoDatoPropertyStorage;
 		
 		/// <summary>
-		/// Gets or sets the value of TIpo domain property.
-		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.TIpo
+		/// Gets or sets the value of TipoDato domain property.
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.Tipo Dato
 		/// </summary>
-		[DslDesign::DisplayNameResource("UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/TIpo.DisplayName", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/TIpo.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/TipoDato.DisplayName", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/TipoDato.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("74bd9ae0-fead-449d-ba88-6239b585259a")]
-		public TipoDeDato TIpo
+		public TipoDeDato TipoDato
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return tIpoPropertyStorage;
+				return tipoDatoPropertyStorage;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				TIpoPropertyHandler.Instance.SetValue(this, value);
+				TipoDatoPropertyHandler.Instance.SetValue(this, value);
 			}
 		}
 		/// <summary>
-		/// Value handler for the Atributo.TIpo domain property.
+		/// Value handler for the Atributo.TipoDato domain property.
 		/// </summary>
-		internal sealed partial class TIpoPropertyHandler : DslModeling::DomainPropertyValueHandler<Atributo, TipoDeDato>
+		internal sealed partial class TipoDatoPropertyHandler : DslModeling::DomainPropertyValueHandler<Atributo, TipoDeDato>
 		{
-			private TIpoPropertyHandler() { }
+			private TipoDatoPropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the Atributo.TIpo domain property value handler.
+			/// Gets the singleton instance of the Atributo.TipoDato domain property value handler.
 			/// </summary>
-			public static readonly TIpoPropertyHandler Instance = new TIpoPropertyHandler();
+			public static readonly TipoDatoPropertyHandler Instance = new TipoDatoPropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the Atributo.TIpo domain property.
+			/// Gets the Id of the Atributo.TipoDato domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
 				[global::System.Diagnostics.DebuggerStepThrough]
 				get
 				{
-					return TIpoDomainPropertyId;
+					return TipoDatoDomainPropertyId;
 				}
 			}
 			
@@ -776,7 +776,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			public override sealed TipoDeDato GetValue(Atributo element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.tIpoPropertyStorage;
+				return element.tipoDatoPropertyStorage;
 			}
 		
 			/// <summary>
@@ -792,10 +792,76 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				if (newValue != oldValue)
 				{
 					ValueChanging(element, oldValue, newValue);
-					element.tIpoPropertyStorage = newValue;
+					element.tipoDatoPropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
+		}
+		
+		#endregion
+		#region CalculatedUnion domain property code
+		
+		/// <summary>
+		/// CalculatedUnion domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid CalculatedUnionDomainPropertyId = new global::System.Guid(0x06fa1906, 0x6c53, 0x456b, 0xb7, 0x67, 0x71, 0xb5, 0x6e, 0x96, 0xc2, 0xea);
+		
+		/// <summary>
+		/// Gets or sets the value of CalculatedUnion domain property.
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.Calculated Union
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/CalculatedUnion.DisplayName", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Atributo/CalculatedUnion.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.Browsable(false)]
+		[global::System.ComponentModel.ReadOnly(true)]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.Calculated)]
+		[DslModeling::DomainObjectId("06fa1906-6c53-456b-b767-71b56e96c2ea")]
+		public global::System.String CalculatedUnion
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return CalculatedUnionPropertyHandler.Instance.GetValue(this);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Atributo.CalculatedUnion domain property.
+		/// </summary>
+		internal sealed partial class CalculatedUnionPropertyHandler : DslModeling::CalculatedPropertyValueHandler<Atributo, global::System.String>
+		{
+			private CalculatedUnionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Atributo.CalculatedUnion domain property value handler.
+			/// </summary>
+			public static readonly CalculatedUnionPropertyHandler Instance = new CalculatedUnionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Atributo.CalculatedUnion domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return CalculatedUnionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Atributo element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for CalculatedUnion because its Kind is
+				// set to Calculated. Please provide the GetCalculatedUnionValue()
+				// method on the domain class.
+				return element.GetCalculatedUnionValue();
+			}
+		
 		}
 		
 		#endregion

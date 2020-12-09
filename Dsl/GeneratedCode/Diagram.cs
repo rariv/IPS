@@ -876,7 +876,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperaciones((global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
 				}
-				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo && e.DomainProperty.Id == global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.NombreAtributoDomainPropertyId)
+				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo && e.DomainProperty.Id == global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.CalculatedUnionDomainPropertyId)
 				{
 					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayAtributos((global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Atributos", repaintOnly);
