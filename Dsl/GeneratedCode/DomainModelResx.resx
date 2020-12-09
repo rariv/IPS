@@ -205,6 +205,14 @@
     <value>Tipo</value>
     <comment>DisplayName for DomainProperty &apos;Tipo&apos; on DomainClass &apos;Operacion&apos;</comment>
   </data>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Operacion/CalculatedUnionOP.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.Calculated Union OP</value>
+    <comment>Description for DomainProperty &apos;CalculatedUnionOP&apos; on DomainClass &apos;Operacion&apos;</comment>
+  </data>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Operacion/CalculatedUnionOP.DisplayName" xml:space="preserve">
+    <value>Calculated Union OP</value>
+    <comment>DisplayName for DomainProperty &apos;CalculatedUnionOP&apos; on DomainClass &apos;Operacion&apos;</comment>
+  </data>
   <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Parametro.Description" xml:space="preserve">
     <value>Description for UPM_IPS.DRMRRBRRMProyectoIPS.Parametro</value>
     <comment>Description for DomainClass &apos;Parametro&apos;</comment>
@@ -228,6 +236,14 @@
   <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Parametro/Tipo.DisplayName" xml:space="preserve">
     <value>Tipo</value>
     <comment>DisplayName for DomainProperty &apos;Tipo&apos; on DomainClass &apos;Parametro&apos;</comment>
+  </data>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Parametro/CalculatedParametro.Description" xml:space="preserve">
+    <value>Description for UPM_IPS.DRMRRBRRMProyectoIPS.Parametro.Calculated Parametro</value>
+    <comment>Description for DomainProperty &apos;CalculatedParametro&apos; on DomainClass &apos;Parametro&apos;</comment>
+  </data>
+  <data name="UPM_IPS.DRMRRBRRMProyectoIPS.Parametro/CalculatedParametro.DisplayName" xml:space="preserve">
+    <value>Calculated Parametro</value>
+    <comment>DisplayName for DomainProperty &apos;CalculatedParametro&apos; on DomainClass &apos;Parametro&apos;</comment>
   </data>
   <data name="UPM_IPS.DRMRRBRRMProyectoIPS.FONDOHasClase.Description" xml:space="preserve">
     <value>Description for UPM_IPS.DRMRRBRRMProyectoIPS.FONDOHasClase</value>

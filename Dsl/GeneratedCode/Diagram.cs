@@ -719,8 +719,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// <summary>
 		/// Rule to update compartments when an item is added to the list
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemAddRule : DslModeling::AddRule
 		{
 			/// <summary>
@@ -737,33 +737,19 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				if(e==null) throw new global::System.ArgumentNullException("e");
 				if (e.ModelElement.IsDeleted)
 					return;
-				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)
-				{
-					global::System.Collections.IEnumerable elements = GetClaseForClaseDisplayOperacionesFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)e.ModelElement);
-					UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
-				}
 				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo)
 				{
 					global::System.Collections.IEnumerable elements = GetClaseForClaseDisplayAtributosFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo)e.ModelElement);
 					UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Atributos", repaintOnly);
 				}
+				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)
+				{
+					global::System.Collections.IEnumerable elements = GetClaseForClaseDisplayOperacionesFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
+				}
 			}
 			
 			#region static DomainPath traversal methods to get the list of compartments to update
-			internal static global::System.Collections.ICollection GetClaseForClaseDisplayOperacionesFromLastLink(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion root)
-			{
-				// Segment 0
-				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase result = root.Clase;
-				if ( result == null ) return new DslModeling::ModelElement[0];
-				return new DslModeling::ModelElement[] {result};
-			}
-			internal static global::System.Collections.ICollection GetClaseForClaseDisplayOperaciones(global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion root)
-			{
-				// Segments 1 and 0
-				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase result = root.Clase;
-				if ( result == null ) return new DslModeling::ModelElement[0];
-				return new DslModeling::ModelElement[] {result};
-			}
 			internal static global::System.Collections.ICollection GetClaseForClaseDisplayAtributosFromLastLink(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo root)
 			{
 				// Segment 0
@@ -772,6 +758,20 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 				return new DslModeling::ModelElement[] {result};
 			}
 			internal static global::System.Collections.ICollection GetClaseForClaseDisplayAtributos(global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo root)
+			{
+				// Segments 1 and 0
+				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase result = root.Clase;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetClaseForClaseDisplayOperacionesFromLastLink(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion root)
+			{
+				// Segment 0
+				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase result = root.Clase;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetClaseForClaseDisplayOperaciones(global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion root)
 			{
 				// Segments 1 and 0
 				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase result = root.Clase;
@@ -823,8 +823,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// <summary>
 		/// Rule to update compartments when an items is removed from the list
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemDeleteRule : DslModeling::DeleteRule
 		{
 			/// <summary>
@@ -839,15 +839,15 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			internal static void ElementDeleted(DslModeling::ElementDeletedEventArgs e, bool repaintOnly)
 			{
 				if(e==null) throw new global::System.ArgumentNullException("e");
-				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)
-				{
-					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperacionesFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)e.ModelElement);
-					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
-				}
 				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo)
 				{
 					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetClaseForClaseDisplayAtributosFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Atributos", repaintOnly);
+				}
+				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperacionesFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
 				}
 			}
 		}
@@ -855,8 +855,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// <summary>
 		/// Rule to update compartments when the property on an item being displayed changes.
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemChangeRule : DslModeling::ChangeRule 
 		{
 			/// <summary>
@@ -871,15 +871,15 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			internal static void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e, bool repaintOnly)
 			{
 				if(e==null) throw new global::System.ArgumentNullException("e");
-				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion && e.DomainProperty.Id == global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.NombreOperacionDomainPropertyId)
-				{
-					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperaciones((global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion)e.ModelElement);
-					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
-				}
 				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo && e.DomainProperty.Id == global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.CalculatedUnionDomainPropertyId)
 				{
 					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayAtributos((global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Atributos", repaintOnly);
+				}
+				if(e.ModelElement is global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion && e.DomainProperty.Id == global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.CalculatedUnionOPDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperaciones((global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
 				}
 			}
 		}
@@ -887,8 +887,8 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		/// <summary>
 		/// Rule to update compartments when a roleplayer change happens
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemRolePlayerChangeRule : DslModeling::RolePlayerChangeRule 
 		{
 			/// <summary>
@@ -903,33 +903,6 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			internal static void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e, bool repaintOnly)
 			{
 				if(e==null) throw new global::System.ArgumentNullException("e");
-				if(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
-				{
-					if(e.DomainRole.IsSource)
-					{
-						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetClaseForClaseDisplayOperacionesFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion)e.OldRolePlayer);
-						//foreach(DslModeling::ModelElement element in oldElements)
-						//{
-						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
-						//	foreach(DslDiagrams::PresentationElement pel in pels)
-						//	{
-						//		global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay compartmentShape = pel as global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay;
-						//		if(compartmentShape != null)
-						//		{
-						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
-						//		}
-						//	}
-						//}
-						
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperacionesFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)e.ElementLink);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
-					}
-					else 
-					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperaciones((global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion)e.NewRolePlayer);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
-					}
-				}
 				if(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
 				{
 					if(e.DomainRole.IsSource)
@@ -943,7 +916,7 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 						//		global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay compartmentShape = pel as global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay;
 						//		if(compartmentShape != null)
 						//		{
-						//			compartmentShape.GetCompartmentMappings()[1].InitializeCompartmentShape(compartmentShape);
+						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
 						//		}
 						//	}
 						//}
@@ -957,14 +930,41 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Atributos", repaintOnly);
 					}
 				}
+				if(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetClaseForClaseDisplayOperacionesFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay compartmentShape = pel as global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[1].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperacionesFromLastLink((global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperaciones((global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
+					}
+				}
 			}
 		}
 	
 		/// <summary>
 		/// Rule to update compartments when the order of items in the list changes.
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemRolePlayerPositionChangeRule : DslModeling::RolePlayerPositionChangeRule 
 		{
 			/// <summary>
@@ -979,20 +979,20 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 			internal static void RolePlayerPositionChanged(DslModeling::RolePlayerOrderChangedEventArgs e, bool repaintOnly)
 			{
 				if(e==null) throw new global::System.ArgumentNullException("e");
-				if(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
-				{
-					if(!e.CounterpartDomainRole.IsSource)
-					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperaciones((global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion)e.CounterpartRolePlayer);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
-					}
-				}
 				if(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasAtributo).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
 				{
 					if(!e.CounterpartDomainRole.IsSource)
 					{
 						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayAtributos((global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo)e.CounterpartRolePlayer);
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Atributos", repaintOnly);
+					}
+				}
+				if(typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseHasOperacion).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetClaseForClaseDisplayOperaciones((global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.ClaseDisplay), "Operaciones", repaintOnly);
 					}
 				}
 			}

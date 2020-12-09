@@ -71,6 +71,11 @@
             <DomainEnumerationMoniker Name="TipoDeDato" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="88b2f1e8-bc43-4ba9-85b1-2d10ea83493f" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.Calculated Union OP" Name="CalculatedUnionOP" DisplayName="Calculated Union OP" Kind="Calculated" IsBrowsable="false" IsUIReadOnly="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
@@ -93,6 +98,11 @@
         <DomainProperty Id="5d7eca64-e645-4e32-8994-cd98f7e136ab" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Parametro.Tipo" Name="Tipo" DisplayName="Tipo">
           <Type>
             <DomainEnumerationMoniker Name="TipoDeDato" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="72572861-11de-4715-9fbc-0af5663287cb" Description="Description for UPM_IPS.DRMRRBRRMProyectoIPS.Parametro.Calculated Parametro" Name="CalculatedParametro" DisplayName="Calculated Parametro" Kind="Calculated" IsBrowsable="false" IsUIReadOnly="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
       </Properties>
@@ -461,6 +471,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="parametro">
             <DomainRelationshipMoniker Name="OperacionHasParametro" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="calculatedUnionOP" Representation="Ignore">
+            <DomainPropertyMoniker Name="Operacion/CalculatedUnionOP" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="RelacionHerencia" MonikerAttributeName="" SerializeId="true" MonikerElementName="relacionHerenciaMoniker" ElementName="relacionHerencia" MonikerTypeName="RelacionHerenciaMoniker">
@@ -499,6 +512,9 @@
           </XmlPropertyData>
           <XmlPropertyData XmlName="tipo">
             <DomainPropertyMoniker Name="Parametro/Tipo" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="calculatedParametro" Representation="Ignore">
+            <DomainPropertyMoniker Name="Parametro/CalculatedParametro" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -606,18 +622,6 @@
         </DecoratorMap>
         <CompartmentShapeMoniker Name="ClaseDisplay" />
         <CompartmentMap>
-          <CompartmentMoniker Name="ClaseDisplay/Operaciones" />
-          <ElementsDisplayed>
-            <DomainPath>ClaseHasOperacion.Operacion/!Operacion</DomainPath>
-          </ElementsDisplayed>
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Operacion/NombreOperacion" />
-              <DomainPath />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </CompartmentMap>
-        <CompartmentMap>
           <CompartmentMoniker Name="ClaseDisplay/Atributos" />
           <ElementsDisplayed>
             <DomainPath>ClaseHasAtributo.Atributo/!Atributo</DomainPath>
@@ -625,6 +629,17 @@
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="Atributo/CalculatedUnion" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </CompartmentMap>
+        <CompartmentMap>
+          <CompartmentMoniker Name="ClaseDisplay/Operaciones" />
+          <ElementsDisplayed>
+            <DomainPath>ClaseHasOperacion.Operacion/!Operacion</DomainPath>
+          </ElementsDisplayed>
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Operacion/CalculatedUnionOP" />
             </PropertyPath>
           </PropertyDisplayed>
         </CompartmentMap>

@@ -318,18 +318,18 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 						baseMappings.CopyTo(mappings, 0);
 					}
 					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
-																				"Operaciones", 
-																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.NombreOperacionDomainPropertyId, 
-																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.DomainClassId, 
-																				GetElementsFromClaseForOperaciones,
-																				null,
-																				null,
-																				null);
-					mappings[localCompartmentMappingsOffset+1] = new DslDiagrams::ElementListCompartmentMapping(
 																				"Atributos", 
 																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.CalculatedUnionDomainPropertyId, 
 																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo.DomainClassId, 
 																				GetElementsFromClaseForAtributos,
+																				null,
+																				null,
+																				null);
+					mappings[localCompartmentMappingsOffset+1] = new DslDiagrams::ElementListCompartmentMapping(
+																				"Operaciones", 
+																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.CalculatedUnionOPDomainPropertyId, 
+																				global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.DomainClassId, 
+																				GetElementsFromClaseForOperaciones,
 																				null,
 																				null,
 																				null);
@@ -362,18 +362,18 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		}
 		
 			#region DomainPath traversal methods to get the list of elements to display in a compartment.
-			internal static global::System.Collections.IList GetElementsFromClaseForOperaciones(DslModeling::ModelElement rootElement)
-			{
-				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase root = (global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase)rootElement;
-					// Segments 0 and 1
-					DslModeling::LinkedElementCollection<global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion> result = root.Operacion;
-				return result;
-			}
 			internal static global::System.Collections.IList GetElementsFromClaseForAtributos(DslModeling::ModelElement rootElement)
 			{
 				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase root = (global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase)rootElement;
 					// Segments 0 and 1
 					DslModeling::LinkedElementCollection<global::UPM_IPS.DRMRRBRRMProyectoIPS.Atributo> result = root.Atributo;
+				return result;
+			}
+			internal static global::System.Collections.IList GetElementsFromClaseForOperaciones(DslModeling::ModelElement rootElement)
+			{
+				global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase root = (global::UPM_IPS.DRMRRBRRMProyectoIPS.Clase)rootElement;
+					// Segments 0 and 1
+					DslModeling::LinkedElementCollection<global::UPM_IPS.DRMRRBRRMProyectoIPS.Operacion> result = root.Operacion;
 				return result;
 			}
 			#endregion

@@ -1099,6 +1099,72 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 		}
 		
 		#endregion
+		#region CalculatedUnionOP domain property code
+		
+		/// <summary>
+		/// CalculatedUnionOP domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid CalculatedUnionOPDomainPropertyId = new global::System.Guid(0x88b2f1e8, 0xbc43, 0x4ba9, 0x85, 0xb1, 0x2d, 0x10, 0xea, 0x83, 0x49, 0x3f);
+		
+		/// <summary>
+		/// Gets or sets the value of CalculatedUnionOP domain property.
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Operacion.Calculated Union OP
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.DRMRRBRRMProyectoIPS.Operacion/CalculatedUnionOP.DisplayName", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Operacion/CalculatedUnionOP.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.Browsable(false)]
+		[global::System.ComponentModel.ReadOnly(true)]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.Calculated)]
+		[DslModeling::DomainObjectId("88b2f1e8-bc43-4ba9-85b1-2d10ea83493f")]
+		public global::System.String CalculatedUnionOP
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return CalculatedUnionOPPropertyHandler.Instance.GetValue(this);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Operacion.CalculatedUnionOP domain property.
+		/// </summary>
+		internal sealed partial class CalculatedUnionOPPropertyHandler : DslModeling::CalculatedPropertyValueHandler<Operacion, global::System.String>
+		{
+			private CalculatedUnionOPPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Operacion.CalculatedUnionOP domain property value handler.
+			/// </summary>
+			public static readonly CalculatedUnionOPPropertyHandler Instance = new CalculatedUnionOPPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Operacion.CalculatedUnionOP domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return CalculatedUnionOPDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Operacion element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for CalculatedUnionOP because its Kind is
+				// set to Calculated. Please provide the GetCalculatedUnionOPValue()
+				// method on the domain class.
+				return element.GetCalculatedUnionOPValue();
+			}
+		
+		}
+		
+		#endregion
 		#region Clase opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Clase.
@@ -1442,6 +1508,72 @@ namespace UPM_IPS.DRMRRBRRMProyectoIPS
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
+		}
+		
+		#endregion
+		#region CalculatedParametro domain property code
+		
+		/// <summary>
+		/// CalculatedParametro domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid CalculatedParametroDomainPropertyId = new global::System.Guid(0x72572861, 0x11de, 0x4715, 0x9f, 0xbc, 0x0a, 0xf5, 0x66, 0x32, 0x87, 0xcb);
+		
+		/// <summary>
+		/// Gets or sets the value of CalculatedParametro domain property.
+		/// Description for UPM_IPS.DRMRRBRRMProyectoIPS.Parametro.Calculated Parametro
+		/// </summary>
+		[DslDesign::DisplayNameResource("UPM_IPS.DRMRRBRRMProyectoIPS.Parametro/CalculatedParametro.DisplayName", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("UPM_IPS.DRMRRBRRMProyectoIPS.Parametro/CalculatedParametro.Description", typeof(global::UPM_IPS.DRMRRBRRMProyectoIPS.DRMRRBRRMProyectoIPSDomainModel), "UPM_IPS.DRMRRBRRMProyectoIPS.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.Browsable(false)]
+		[global::System.ComponentModel.ReadOnly(true)]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.Calculated)]
+		[DslModeling::DomainObjectId("72572861-11de-4715-9fbc-0af5663287cb")]
+		public global::System.String CalculatedParametro
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return CalculatedParametroPropertyHandler.Instance.GetValue(this);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Parametro.CalculatedParametro domain property.
+		/// </summary>
+		internal sealed partial class CalculatedParametroPropertyHandler : DslModeling::CalculatedPropertyValueHandler<Parametro, global::System.String>
+		{
+			private CalculatedParametroPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Parametro.CalculatedParametro domain property value handler.
+			/// </summary>
+			public static readonly CalculatedParametroPropertyHandler Instance = new CalculatedParametroPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Parametro.CalculatedParametro domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return CalculatedParametroDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Parametro element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for CalculatedParametro because its Kind is
+				// set to Calculated. Please provide the GetCalculatedParametroValue()
+				// method on the domain class.
+				return element.GetCalculatedParametroValue();
+			}
+		
 		}
 		
 		#endregion
